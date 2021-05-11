@@ -13,6 +13,16 @@
 - PreOrder: parent, left, right
 - PostOrder: left, right, parent
 
+## DFS vs BFS
+DFS is better at:
+- narrow but deep trees
+- finding nodes far from root
+
+BFS is better at:
+- shallow but wide trees
+- finding nodes near to root
+
+
 ## Tips
 Tree traversals are often recursive in nature.
 If pulling data up the tree - recurse first then analyze.
