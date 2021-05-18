@@ -1,7 +1,7 @@
 // https://algo.monster/problems/knight_shortest_path
 
-describe("Knight Minimum Moves", () => {
-  it.only("scenario 1", () => {
+describe.skip("Knight Minimum Moves", () => {
+  it("scenario 1", () => {
     const output = getKnightShortestPath(2, 1);
 
     const expected = 1;
@@ -10,7 +10,7 @@ describe("Knight Minimum Moves", () => {
 });
 
 
-// time: O(rows * cols) space O(1)
+// time: O(n) space O(1)
 function getKnightShortestPath(x: number, y: number) {
   const visited = new Set<string>();
   const queue = [[0, 0]];
