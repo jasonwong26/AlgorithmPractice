@@ -36,7 +36,7 @@ function floodFill(image: number[][], start: number[], newColor: number) {
     image[row][col] = newColor;
 
     const neighbors = findNeighbors([row, col], rows, cols);
-    for(let cell of neighbors) {
+    for(const cell of neighbors) {
       const [r, c] = cell;
       if(visited.has(`${r},${c}`)) continue;
       if(image[r][c] !== oldColor) continue;

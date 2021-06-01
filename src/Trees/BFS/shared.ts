@@ -8,7 +8,7 @@ export class TreeNode implements INode {
   left: TreeNode;
   right: TreeNode;
 
-  constructor(val, left = null, right = null) {
+  constructor(val: number, left = null, right = null) {
       this.val = val;
       this.left = left;
       this.right = right;
@@ -17,12 +17,12 @@ export class TreeNode implements INode {
 
 export function buildTree(nodes: Iterator<string>, f: (s: string) => number): INode {
   const val = nodes.next().value;
-  if (val === 'x') return null;
+  if (val === "x") return null;
   const left = buildTree(nodes, f);
   const right = buildTree(nodes, f);
   return new TreeNode(f(val), left, right);
 }
 
 export function splitWords(s: string): string[]  {
-  return s == "" ? [] : s.split(' ');
+  return s == "" ? [] : s.split(" ");
 }

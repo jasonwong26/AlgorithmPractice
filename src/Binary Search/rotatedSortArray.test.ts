@@ -49,6 +49,7 @@ function findMinRotated(arr: number[]) {
 }
 
 // time: O(n) space O(1)
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function findMinRotatedLinear(arr: number[]) {
   if(!arr) return -1;
   

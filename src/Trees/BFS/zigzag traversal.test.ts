@@ -20,7 +20,7 @@ function zigZagTraversal(root) {
   const queue: TreeNode[] = [root, null];
   
   const output: number[][] = [];
-  let readLeftToRight: boolean = true;
+  let readLeftToRight = true;
   let row = [];
   while(queue.length > 0) {
     const curr = queue.shift();

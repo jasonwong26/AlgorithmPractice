@@ -40,7 +40,7 @@ function shortestDistance(graph: {[key: number]: number[] }, nodeA: number, node
 
     // continue search
     const neighbors = graph[curr];
-    for(let node of neighbors) {
+    for(const node of neighbors) {
       // already visited, skip
       if(visited.has(node)) continue;
 

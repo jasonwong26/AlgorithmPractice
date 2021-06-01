@@ -39,6 +39,7 @@ describe.skip("Find Boundary", () => {
 });
 
 // time: O(log(n)) space O(1)
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function findBoundary(arr: boolean[]): number {
   if(!arr) return -1;
   

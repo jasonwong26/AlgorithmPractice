@@ -1,6 +1,6 @@
 // https://algo.monster/problems/letter_combinations_of_phone_number
 
-describe("Letter Combinations of Phone Number", () => {
+describe.skip("Letter Combinations of Phone Number", () => {
   it("scenario 1", () => {
     const input = "56";
     const output = letterCombinationsOfPhoneNumber(input);
@@ -8,7 +8,7 @@ describe("Letter Combinations of Phone Number", () => {
     const expected = "jm jn jo km kn ko lm ln lo".split(" ");
     expect(output.sort()).toEqual(expected.sort());
   });
-  it.only("scenario 2", () => {
+  it("scenario 2", () => {
     const input = "235";
     const output = letterCombinationsOfPhoneNumber(input);
 

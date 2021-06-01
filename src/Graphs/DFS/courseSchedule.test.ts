@@ -36,6 +36,7 @@ describe.skip("Is Valid Course Schedule", () => {
 });
 
 // time: O(n^2) space O(n)
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function isValidCourseSchedule(n: number, prerequisites: number[][]) {
   const map = new Map<number, number[]>();
 
@@ -52,7 +53,7 @@ function isValidCourseSchedule(n: number, prerequisites: number[][]) {
   return true;
 }
 
-function hasInvalidRequisite(courseId: number, prerequisites: Map<number, number[]>, visited: boolean[], depth: number = 0): boolean {
+function hasInvalidRequisite(courseId: number, prerequisites: Map<number, number[]>, visited: boolean[], depth = 0): boolean {
   // course has no prerequisites
   if(!prerequisites.has(courseId)) return false;
 
@@ -94,7 +95,7 @@ enum CourseState {
   Visited = 2
 }
 
-function hasInvalidRequisite2(courseId: number, prerequisites: Map<number, number[]>, visited: number[], depth: number = 0): boolean {
+function hasInvalidRequisite2(courseId: number, prerequisites: Map<number, number[]>, visited: number[], depth = 0): boolean {
   // course has no prerequisites
   if(!prerequisites.has(courseId)) return false;
   

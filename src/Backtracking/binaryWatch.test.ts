@@ -24,7 +24,7 @@ function readBinaryWatch(turnedOn: number): string[] {
   return output;
 };
 
-const backTrack = (output: string[], turnedOn: number, hourFlags: number[], minuteFlags: number[], hour: number = 0, minute: number = 0, currIndex: number = 0, depth: number = 0) => {
+const backTrack = (output: string[], turnedOn: number, hourFlags: number[], minuteFlags: number[], hour = 0, minute = 0, currIndex = 0, depth = 0) => {
   if(hour > 11 || minute > 59) 
     return;
 

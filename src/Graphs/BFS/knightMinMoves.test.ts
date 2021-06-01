@@ -27,7 +27,7 @@ function getKnightShortestPath(x: number, y: number) {
 
       // search neighbors
       const neighbors = findNeighbors(curr);
-      for(let cell of neighbors) {
+      for(const cell of neighbors) {
         const [r, c] = cell;
         visited.add(`${r},${c}`);
         queue.push(cell);

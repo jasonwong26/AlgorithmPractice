@@ -29,7 +29,7 @@ function wordLadder(begin: string, end: string, wordList: string[]): number {
 
       // continue search
       const neighbors = adjList.get(curr);
-      for(let node of neighbors) {
+      for(const node of neighbors) {
         if(visited.has(node)) continue;
         visited.add(node);
         queue.push(node);
@@ -48,9 +48,9 @@ function buildAdjacencyList(wordList: string[]): Map<string,string[]>
 {
   const output = new Map<string,string[]>();
 
-  for(var i = 0; i < wordList.length; i++) {
+  for(let i = 0; i < wordList.length; i++) {
     const set = [];
-    for(var n = 0; n < wordList.length; n++) {
+    for(let n = 0; n < wordList.length; n++) {
       if(n == i) continue;
       if(!isNeighbor(wordList[i], wordList[n])) continue;
       set.push(wordList[n]);

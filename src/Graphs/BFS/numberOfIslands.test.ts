@@ -47,7 +47,7 @@ function checkForIsland(image: number[][], cell: number[], rows: number, cols: n
     const curr = queue.shift();
 
     const neighbors = findNeighbors(curr, rows, cols);
-    for(let n of neighbors) {
+    for(const n of neighbors) {
       const [r, c] = n;
       if(image[r][c] !== 1) continue;
       image[r][c] += 10;

@@ -18,7 +18,7 @@ We need to answer the following questions:
 
 ## Altorithm Templates
 
-When you want to test all possible permutations:
+### test all possible permutations:
 ```
 /*
  current: current value being constructed
@@ -49,4 +49,94 @@ function permutationsB(current: string[], output: string[][], letters: string[],
       used.delete(i);
   }    
 }
+```
+
+### Count Permutations
+identify # of ways to parse a string of integers representing letters:
+- example: "123" => [1, 2, 3], [12, 3], [1, 23] => ["ABC", "LC", "AW"]
+
+```
+/*
+ index: current index
+ digits:  string to process
+ depth: stack depth (not needed to output result)
+ display: representation of permutation (not needed to output result)
+*/
+function memoParse(index: number, digits: string, depth = 0, display: number[] = []) {
+  console.log("call", {index, depth, display});
+  if(index === digits.length) return 1;
+  
+  if(memo[index] != undefined) 
+      return memo[index];
+
+  const offsets = [1, 2];
+  let sum = 0;
+  for (const o of offsets) {
+      if(index + o > digits.length) continue;
+      
+      const key = digits.substring(index, index + o);
+      const val = parseInt(key);
+      
+      if(val < 1 || val > 26) continue;
+      display.push(val);
+      const recurseVal = memoParse(index + o, digits, memo, depth + 1, display);
+      sum += recurseVal;
+      display.pop();
+  }
+  
+  //console.log("output:", {index, sum, depth});
+  memo[index] = sum;
+  return sum;
+}
+```
+
+## Memoization
+
+Steps to leverage memoization:
+
+1. Identify what the memo data structure should look like.
+1. 
+
+```
+/*
+memo stores:
+- key: index in target string compared to words collection
+- value: true: words collection contains a combination that results in string matching target.substring(index, {end of string}). (NOTE: not used in example below)
+        false: no combination exists in words collection.
+
+Existence of a memo === false, acts as a shortcut to prevent recalculation steps.
+      
+*/
+
+function memo_example(index: number, target: string, words: string[], memo: Map<number, boolean> = new Map(), depth = 0) {
+  // backtrack step: stop if satisfied
+  if(index === target.length) return true;
+
+  // memoization step: retrieve memo if one exists. (Note use of `!= undefined` to retrieve both true and false values)
+  const memoVal = memo.get(index);
+  if (memoVal != undefined) {
+    return memoVal;
+  }
+
+  // backtrack step: loop over possible next nodes
+  for (const w of words) {
+    const partial = target.substring(index, index + w.length);
+    if(w !== partial) continue;
+
+    // backtrack step: recursive call
+    if(memoizedBackTrack(index + w.length, target, words, w, memo, depth + 1)) {
+      // memoization step: add result to memo.  NOTE: some problems only leverage memoization in specific cases.
+      // console.log("match found, adding to memo:", {index, memoVal: true, depth});
+      // memo.set(index, false); -- NOTE: Never used in this algorithm
+      return true;
+    }
+  }
+
+  // memoization step: add result to memo.
+  // console.log("no match found, adding to memo:", {index, memoVal: false, depth});
+  memo.set(index, false);
+  return false;
+}
+
+
 ```
