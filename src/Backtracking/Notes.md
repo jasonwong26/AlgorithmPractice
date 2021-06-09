@@ -15,6 +15,24 @@ We need to answer the following questions:
 
 ### Draw the state-space tree
 
+### Pruning is just a fancy way of saying stop processing when a validation function fails
+Example: Palindrome pruning
+
+> Given a string s, partition s such that every substring of the partition is a palindrome.
+> Return all possible palindrome partitioning of s.
+
+Assumption:
+1. A string of length 1 is always a palindrome
+
+Pseudocode:
+1. Start at position 0
+1. Backtrack with increasingly larger string lengths
+1. if left substring is not a palindrome, stop - dead path.
+1. if left substring IS a palindrome, pass remainder of string into recursvie call.
+1. add to results when input string === ""
+
+The pruning part is the test of whether the substring is a palindrome.  (though can be replaced with any other boolean function).
+
 
 ## Altorithm Templates
 
