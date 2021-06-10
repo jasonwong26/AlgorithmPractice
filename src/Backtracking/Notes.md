@@ -28,11 +28,70 @@ Pseudocode:
 1. Start at position 0
 1. Backtrack with increasingly larger string lengths
 1. if left substring is not a palindrome, stop - dead path.
-1. if left substring IS a palindrome, pass remainder of string into recursvie call.
+1. if left substring IS a palindrome, pass remainder of string into recursive call.
 1. add to results when input string === ""
 
 The pruning part is the test of whether the substring is a palindrome.  (though can be replaced with any other boolean function).
 
+
+### Deduping
+Example: Combination Sum
+
+>Given an array of distinct integers candidates and a target integer target, return a list of all unique combinations of candidates where the chosen numbers sum to target. You may return the combinations in any order.
+> The same number may be chosen from candidates an unlimited number of times. Two combinations are unique if the frequency of at least one of the chosen numbers is different.
+
+Trick: 
+- identifying unique combinations == identifying unique paths
+- avoid traversing paths that are equivalent to those executed before
+- limitation: must be distinct values in candidate collection!  duplicate values breaks this optimization
+
+Pseudocode:
+1. Start at position 0
+1. Backtrack, creating collection from candidates (a candidate can be used multiple times)
+1. if sum > target, stop - dead path
+1. if left substring < target, recurse.  Only check for candidates where index >= current element
+1. add to results when sum === target
+
+
+### Handling multiple growth variables
+Example: Word Pattern II
+
+> Given a pattern and a string s, find if s follows the same pattern.
+> Here follow means a full match, such that there is a bijection between a letter in pattern and a non-empty substring in s.
+
+```
+## Examples
+Example 1:
+Input: pattern = "abab", s = "redblueredblue"
+Output: true
+
+Example 2:
+Input: pattern = "aaaa", s = "asdasdasdasd"
+Output: true
+
+Example 3:
+Input: pattern = "aabb", s = "xyzabcxzyabc"
+Output: false
+```
+
+Trick: 
+- identify that there are TWO backtracking problems: one for mapping the letters in the pattern to substrings, and a second for testing if the solution is found.
+- DON'T try and pre-generate the map of letters to substrings (I wasted hours on that approach)
+- Add an IF statement within the backtrack to determine which path to take:
+  - backtrack to update substring mapped to current pattern letter
+  - backtrack to next pattern in sequence
+
+
+Pseudocode:
+1. Start at position 0, with an empty dictionary of letters to substrings.  Set current index for pattern string to 0.
+1. Check if a dictionary value exists for pattern string index.
+   - if YES: recurse:
+     - remove the found pattern from the next input string
+     - update the pattern index parameter + 1 
+   - if NO: loop over current string, expanding pattern definition
+     - set map value
+     - recursive call (to check first branch)
+     - remove map value (for next iteration)
 
 ## Altorithm Templates
 
