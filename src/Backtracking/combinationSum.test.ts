@@ -50,6 +50,7 @@ function backtrack(candidates, target, output, sum = 0, current = [], memo = {},
       current.push(val);
       sum += val;
       
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       backtrack(candidates, target, output, sum, current, memo, depth + 1);
       
       current.pop();
@@ -60,7 +61,7 @@ function backtrack(candidates, target, output, sum = 0, current = [], memo = {},
 
 // Note use of `startIndex` parameter to shortcut and avoid duplicate paths
 function backtrackWithDeDup(candidates, target, output, sum = 0, current = [], startIndex = 0, depth = 0) {
-  console.log("call ", {depth, sum, current});
+  //console.log("call ", {depth, sum, current});
 
   // possible match found
   if(sum === target) {

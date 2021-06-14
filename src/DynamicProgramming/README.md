@@ -11,6 +11,8 @@ Two types of DP
 - Bottom Up: solve smaller problems first, then use those to solve larger problems
   - Example: Fibonacci
 
+Very easy to mistake DP for backtracking or DFS problems.  Maybe think of this as an optimization on top of these??
+
 ## Examples using Fibonnaci sequence
 **Naive Recursion approach**
 ```
