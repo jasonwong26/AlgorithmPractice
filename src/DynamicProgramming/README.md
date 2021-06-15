@@ -72,3 +72,10 @@ Space becomse constant due to use of loop and just 2 prior calculation variables
 
 
 TODO: complete problem - https://leetcode.com/problems/predict-the-winner/solution/
+
+## How to do
+
+1. Identify that it is a DP problem
+1. Find the recurrence relation 
+1. ???
+1. profit!
