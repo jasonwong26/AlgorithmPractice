@@ -1,7 +1,5 @@
 //https://leetcode.com/problems/triangle/submissions/
 
-//PAT test
-
 describe.skip("Triangle", () => {
   it("scenario 1", () => {
     const input = [[2],[3,4],[6,5,7],[4,1,8,3]];
