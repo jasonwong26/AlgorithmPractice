@@ -76,6 +76,6 @@ TODO: complete problem - https://leetcode.com/problems/predict-the-winner/soluti
 ## How to do
 
 1. Identify that it is a DP problem
-1. Find the recurrence relation 
+1. Find the recurrence relation / determine cache structure
 1. ???
 1. profit!

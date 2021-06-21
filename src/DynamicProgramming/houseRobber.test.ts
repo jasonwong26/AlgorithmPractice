@@ -17,6 +17,7 @@ describe.skip("House Robber", () => {
   });
 });
 
+// recurrence relation: max = MAX(dp(i - 1), dp(i) + dp(i-2))
 function rob(nums: number[]): number {
   const cache = {};
   cache[-1] = 0;

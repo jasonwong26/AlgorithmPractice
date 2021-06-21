@@ -53,8 +53,8 @@ function backtrack(board: string[][], word: string, row = 0, col = 0, index = 0,
   // determine cells to check
   const next = [];
   if(index === 0) { // check entire board        
-      for(var i = 0; i <= maxRow; i++) {
-          for(var n = 0; n <= maxCol; n++) {
+      for(let i = 0; i <= maxRow; i++) {
+          for(let n = 0; n <= maxCol; n++) {
               next.push([i, n]);
           }    
       }
