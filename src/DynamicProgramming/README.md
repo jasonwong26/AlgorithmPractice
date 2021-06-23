@@ -79,3 +79,7 @@ TODO: complete problem - https://leetcode.com/problems/predict-the-winner/soluti
 1. Find the recurrence relation / determine cache structure
 1. ???
 1. profit!
+
+## Finding the recurrence relation:
+
+**For Grids and Graphs**: look at the neighbors (cells or nodes) as the prior sub problems.
