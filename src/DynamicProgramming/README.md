@@ -83,3 +83,8 @@ TODO: complete problem - https://leetcode.com/problems/predict-the-winner/soluti
 ## Finding the recurrence relation:
 
 **For Grids and Graphs**: look at the neighbors (cells or nodes) as the prior sub problems.
+**For array sums/ partitions/etc**: cache structure = array of output values (numbers or booleans) that you can use to calculate later results
+**For combintion problems**: 2d array
+
+- # of coins used (coinChange.test.ts)
+- # can be summed to (partitionEqualSubset.test.ts)
