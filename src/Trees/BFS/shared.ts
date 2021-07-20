@@ -16,7 +16,9 @@ export class TreeNode implements INode {
 }
 
 export function buildTree(nodes: Iterator<string>, f: (s: string) => number): INode {
-  const val = nodes.next().value;
+  const next = nodes.next();
+  if(next.done) return null;
+  const val = next.value;
   if (val === "x") return null;
   const left = buildTree(nodes, f);
   const right = buildTree(nodes, f);
